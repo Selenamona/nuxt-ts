@@ -1,7 +1,7 @@
 <template>
   <div>
     <button @click="$myInjectedFunction('hah')">Click me !</button>
-    <button @click="someMethod">Click me !</button>
+    <nuxt-link to="{path:'/list',query:{id:1,name:'aaa'}}">下一页</nuxt-link>
   </div>
 </template>
 
