@@ -6,9 +6,8 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
   asyncData(context: any) {
     // 1、单独注入到 context 时
     context.$myInjectedFunction('works in asyncData，myInjectedFunction 单独注入到 content')
