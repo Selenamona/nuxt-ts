@@ -1,5 +1,26 @@
 # nuxtPC
 
+
+## custom
+
+### 配置对 stylus 的支持
+
+***安装***
+
+安装 style-resources：`npm install --save-dev @nuxtjs/style-resources`
+安装 stylus：`npm install --save-dev stylus-loader stylus`
+
+> 报错：`this.getOptions is not a function`，原因 stylus-loader 版本高
+> 解决：1. `npm uninstall stylus-loader`; 2. `npm install stylus-loader@3.0.2 --save-dev`
+
+***设置公共变量***
+
+```JavaScript
+// 修改 nuxt.config.js
+modules: ['@nuxtjs/style-resources'],
+styleResources: { stylus: '~/assets/css/common.styl' }
+```
+
 ## Build Setup
 
 ```bash
