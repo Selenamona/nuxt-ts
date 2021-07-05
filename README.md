@@ -1,5 +1,8 @@
 # nuxtPC
 
+## documentation
+
+[nuxt/axios](https://axios.nuxtjs.org/)
 
 ## custom
 
@@ -20,6 +23,7 @@
 modules: ['@nuxtjs/style-resources'],
 styleResources: { stylus: '~/assets/css/common.styl' }
 ```
+
 
 ## Build Setup
 
@@ -88,3 +92,15 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+
+## 报错及解决
+
+1、页面引入组件报错：`Cannot find module '~/XXX.vue' or its corresponding type declarations.`
+
+上述问题的产生，一般是由于 Visual Studio Code 中安装了 Vetur 插件，它要求：
+
+1，项目在工作区根目录（就是把项目文件夹拖进 vscode 后的效果）
+2，项目排在第一位（不在第一位可以鼠标拖动项目移到第一位）
+
+解决方案：直接把项目移至工作区的第一位

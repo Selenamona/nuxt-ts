@@ -1,7 +1,7 @@
 <template>
   <div class="nuxt-home">
     <button @click="$myInjectedFunction('hah')">Click me !</button>
-    <nuxt-link to="{path:'/list',query:{id:1,name:'aaa'}}">下一页</nuxt-link>
+    <nuxt-link :to="{ path: '/list', query: { id: 1, name: 'aaa' } }">下一页</nuxt-link>
     <a-carousel :after-change="onChange">
       <div>
         <h3>1</h3>

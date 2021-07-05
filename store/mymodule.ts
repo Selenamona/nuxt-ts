@@ -4,3 +4,4 @@ import { Module, VuexModule } from 'vuex-module-decorators'
 export default class MyModule extends VuexModule {
   someField: string = 'somedata'
 }
+
