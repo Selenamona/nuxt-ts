@@ -20,17 +20,35 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, onMounted, onServerPrefetch, ref } from '@vue/composition-api'
+import { exampleStore } from '~/store'
+
 export default defineComponent({
   setup() {
     const onChange = (current: number) => {
       console.log(current);
     };
 
+
+    // const result = ref()
+    // onServerPrefetch(async () => {
+    //   result.value = await callApi()
+    // })
+
+    onMounted(() => {
+      console.log(exampleStore, 3);
+
+    })
     return {
       onChange,
     };
   },
+  /**
+   * asyncData：
+   * 1、不能访问 this
+   * 2、只能用于路由组件(或 page 组件)
+   * 3、需要通过返回对象(或 promise)将数据暴露到渲染环境
+   */
   asyncData(context: any) {
     // 1、单独注入到 context 时
     context.$myInjectedFunction('works in asyncData，myInjectedFunction 单独注入到 content')
