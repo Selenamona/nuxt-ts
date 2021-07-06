@@ -1,7 +1,6 @@
-import { $axios } from '~/utils/api'
 
-export default function ({ route }) {
-  return $axios.post('http://my-stats-api.com', {
+export default ({ route, $axios }) => {
+  return $axios.$post('http://my-stats-api.com', {
     url: route.fullPath
   })
 }

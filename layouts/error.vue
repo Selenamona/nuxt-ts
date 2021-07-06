@@ -1,3 +1,4 @@
+import { defineComponent } from '@vue/composition-api';
 <template>
   <div class="container">
     <h1 v-if="error.statusCode === 404">Page not found</h1>
@@ -7,10 +8,11 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from "@vue/composition-api"
+export default defineComponent({
   layout: 'blog',
   props: {
-    error: { type: Number, default: null }
+    error: { type: Object, default: () => { } }
   } // you can set a custom layout for the error page
-}
+})
 </script>
