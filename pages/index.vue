@@ -24,6 +24,13 @@ import { defineComponent, onMounted } from '@vue/composition-api'
 import { exampleStore, vehicleStore } from '~/store'
 
 export default defineComponent({
+  // middleware: 'authenticated', // Named middleware
+  middleware({ store, redirect }) { // Anonymous middleware
+    // If the user is not authenticated
+    if (!store.state.authenticated) {
+      return redirect('/login')
+    }
+  },
   setup() {
     const onChange = (current: number) => {
       console.log(current);

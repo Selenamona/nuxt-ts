@@ -109,3 +109,8 @@ More information about the usage of this directory in [the documentation](https:
 2，项目排在第一位（不在第一位可以鼠标拖动项目移到第一位）
 
 解决方案：直接把项目移至工作区的第一位
+
+
+2、报错提示`Binding element 'route' implicitly has an 'any' type.`
+
+解决 tsconfig.json compilerOptions 新增 `"noImplicitAny": false`

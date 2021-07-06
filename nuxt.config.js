@@ -45,7 +45,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    // proxy: true // Can be also an object with default options
+    proxy: true // Can be also an object with default options
     // baseURL: 'https://yxapp.uat.yixincapital.com'
     // retry: { retries: 3 }
   },
@@ -54,6 +54,9 @@ export default {
     '/api2/': 'http://api.another-website.com'
   },
 
+  router: {
+    middleware: 'stats' // middleware will be called for every route change.
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {}
 }

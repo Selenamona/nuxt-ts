@@ -12,6 +12,7 @@
 export default {
   name: 'Default',
   layout: 'blog',
+  middleware: ['auth', 'stats'], // 中间件-用于指定的布局or页面
   // OR
   // layout (context) {
   //   return 'blog'
