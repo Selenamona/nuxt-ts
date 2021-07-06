@@ -1,15 +1,17 @@
-import { Module, VuexModule, Mutation, Action } from 'vuex-module-decorators'
+import { Module, VuexModule, Mutation, Action, MutationAction } from 'vuex-module-decorators'
 import { $axios } from '~/utils/api'
-import { User } from '~/types'
+import { User, Post } from '~/types'
 
 @Module({
   name: 'mymodule',
   stateFactory: true,
-  // namespaced: true,
+  namespaced: true, // 解决 unknown mutation type: XXX/XXX 报错
 })
 export default class MyModule extends VuexModule {
   wheels: number = 0
   users: User[] = []
+  posts: Post[] = []
+
 
   @Mutation
   incrWheels(extra: number) {
@@ -31,5 +33,11 @@ export default class MyModule extends VuexModule {
     // this.context.commit('addWheel', wheels)
   }
 
+  // action-mutation-state 一条龙
+  @MutationAction
+  async updatePosts() {
+    const posts = await $axios.$get('https://jsonplaceholder.typicode.com/posts')
+    return { posts }
+  }
 }
 

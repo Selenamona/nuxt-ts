@@ -20,8 +20,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, onServerPrefetch, ref } from '@vue/composition-api'
-import { exampleStore } from '~/store'
+import { defineComponent, onMounted } from '@vue/composition-api'
+import { exampleStore, vehicleStore } from '~/store'
 
 export default defineComponent({
   setup() {
@@ -29,14 +29,21 @@ export default defineComponent({
       console.log(current);
     };
 
-
     // const result = ref()
     // onServerPrefetch(async () => {
     //   result.value = await callApi()
     // })
 
     onMounted(() => {
-      console.log(exampleStore, 3);
+
+      // 模块二
+      console.log(vehicleStore, vehicleStore.company('c1'))
+
+      // 模块一
+      // console.log(exampleStore, exampleStore.wheels);
+      // exampleStore.incrWheels(3)
+      // console.log(exampleStore.wheels);
+      // console.log(exampleStore.axles, "end");
 
     })
     return {
