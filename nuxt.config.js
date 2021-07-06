@@ -21,7 +21,8 @@ export default {
   plugins: [
     '@/plugins/antd-ui',
     '@/plugins/vue-inject.ts',
-    '@/plugins/composition-api.ts'
+    '@/plugins/composition-api.ts',
+    '@/plugins/axios'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -43,7 +44,15 @@ export default {
   styleResources: { stylus: '~/assets/css/common.styl' },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    // proxy: true // Can be also an object with default options
+    // baseURL: 'https://yxapp.uat.yixincapital.com'
+    // retry: { retries: 3 }
+  },
+  proxy: {
+    '/phenix-platform': 'https://yxapp.uat.yixincapital.com',
+    '/api2/': 'http://api.another-website.com'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {}

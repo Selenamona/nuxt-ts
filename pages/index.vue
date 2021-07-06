@@ -40,10 +40,10 @@ export default defineComponent({
       console.log(vehicleStore, vehicleStore.company('c1'))
 
       // 模块一
-      // console.log(exampleStore, exampleStore.wheels);
-      // exampleStore.incrWheels(3)
-      // console.log(exampleStore.wheels);
-      // console.log(exampleStore.axles, "end");
+      console.log(exampleStore, exampleStore.wheels);
+      exampleStore.incrWheels(3)
+      console.log(exampleStore.wheels);
+      console.log(exampleStore.axles, "end");
 
     })
     return {

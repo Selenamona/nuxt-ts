@@ -21,8 +21,17 @@ export default defineComponent({
     console.log("asyncData 请求", ip);
     return { ip }
   },
+  // head() {
+  //   return {
+  //     title: this.title,
+  //     meta: [
+  //       { hid: 'description', name: 'news', content: 'This is news page' }
+  //     ]
+  //   }
+  // },
   created() {
     this.fetchSomething()
+    this.postRequest()
   },
   methods: {
     async fetchSomething() {
@@ -30,6 +39,11 @@ export default defineComponent({
       const ip = await this.$axios.$get('http://icanhazip.com')
       console.log("methods 请求", ip);
       this.ip = ip
+    },
+    async postRequest() {
+      const result = await this.$axios.$post('/phenix-platform/api/thirdPlatFormFace/getTranceId', {})
+      console.log(result);
+
     },
     nextPage() {
       // this.$router.push({ path: '/contact/22' });

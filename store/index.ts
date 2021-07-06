@@ -1,3 +1,4 @@
+// 参考：https://championswimmer.in/vuex-module-decorators/pages/core/getters.html
 
 import { Store } from 'vuex'
 import { initialiseStores } from '~/utils/store-accessor'

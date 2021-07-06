@@ -3,6 +3,11 @@
 ## documentation
 
 [nuxt/axios](https://axios.nuxtjs.org/)
+[nuxtjs](https://zh.nuxtjs.org/)
+[Nuxt TypeScript](https://typescript.nuxtjs.org/)
+
+***插件***
+[vuex-persist](https://www.npmjs.com/package/vuex-persist)
 
 ## custom
 
