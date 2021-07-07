@@ -114,3 +114,17 @@ More information about the usage of this directory in [the documentation](https:
 2、报错提示`Binding element 'route' implicitly has an 'any' type.`
 
 解决 tsconfig.json compilerOptions 新增 `"noImplicitAny": false`
+
+
+## 配置 ip 和端口号
+
+在 `package.json` 中添加：
+
+```json
+"config": {
+  "nuxt": {
+    "host": "0.0.0.0",
+    "port": "8090"
+  }
+}
+```
