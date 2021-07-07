@@ -1,4 +1,3 @@
-import { defineComponent } from '@vue/composition-api';
 <template>
   <div class="container">
     <h1 v-if="error.statusCode === 404">
